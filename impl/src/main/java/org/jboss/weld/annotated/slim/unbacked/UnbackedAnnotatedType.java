@@ -39,7 +39,7 @@ import edu.umd.cs.findbugs.annotations.SuppressWarnings;
 public class UnbackedAnnotatedType<X> extends UnbackedAnnotated implements SlimAnnotatedType<X>, Serializable {
 
     public static <X> UnbackedAnnotatedType<X> additionalAnnotatedType(String contextId, AnnotatedType<X> source, String bdaId, String suffix, SharedObjectCache cache) {
-        return new UnbackedAnnotatedType<X>(source, AnnotatedTypeIdentifier.of(contextId, bdaId, source.getJavaClass().getName(), suffix, false), cache);
+        return new UnbackedAnnotatedType<X>(source, AnnotatedTypeIdentifier.of(contextId, bdaId, source.getJavaClass(), suffix, false), cache);
     }
 
     public static <X> UnbackedAnnotatedType<X> modifiedAnnotatedType(SlimAnnotatedType<X> originalType, AnnotatedType<X> source, SharedObjectCache cache) {
